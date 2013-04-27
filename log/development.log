@@ -1,0 +1,258 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (133.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (99.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateAlunos (20130427153724)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  CREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "matricula" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130427153724')[0m
+  [1m[35m (100.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-27 12:41:46 -0300
+Served asset /rails.png - 200 OK (41ms)
+
+
+Started GET "/alunos" for 127.0.0.1 at 2013-04-27 12:41:50 -0300
+Processing by AlunosController#index as HTML
+  [1m[36mAluno Load (0.2ms)[0m  [1mSELECT "alunos".* FROM "alunos" [0m
+  Rendered alunos/index.html.erb within layouts/application (9.2ms)
+Compiled alunos.css  (37ms)  (pid 7520)
+Compiled scaffolds.css  (25ms)  (pid 7520)
+Compiled application.css  (88ms)  (pid 7520)
+Compiled jquery.js  (4ms)  (pid 7520)
+Compiled jquery_ujs.js  (0ms)  (pid 7520)
+Compiled alunos.js  (226ms)  (pid 7520)
+Compiled application.js  (318ms)  (pid 7520)
+Completed 200 OK in 739ms (Views: 640.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /application.css - 200 OK (51ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /alunos.css - 200 OK (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /scaffolds.css - 200 OK (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /jquery.js - 200 OK (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /jquery_ujs.js - 200 OK (13ms)
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /alunos.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-27 12:41:51 -0300
+Served asset /application.js - 200 OK (20ms)
+
+
+Started GET "/alunos/new" for 127.0.0.1 at 2013-04-27 12:41:53 -0300
+Processing by AlunosController#new as HTML
+  Rendered alunos/_form.html.erb (60.2ms)
+  Rendered alunos/new.html.erb within layouts/application (228.4ms)
+Completed 200 OK in 286ms (Views: 271.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/alunos" for 127.0.0.1 at 2013-04-27 12:42:00 -0300
+Processing by AlunosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMnabUwfEfeAbnFKmVF59jsK/X9MEVx554OJIVR4tpI=", "aluno"=>{"nome"=>"daniell", "matricula"=>"329323"}, "commit"=>"Create Aluno"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (73.5ms)[0m  [1mINSERT INTO "alunos" ("created_at", "matricula", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 27 Apr 2013 15:42:00 UTC +00:00], ["matricula", 329323], ["nome", "daniell"], ["updated_at", Sat, 27 Apr 2013 15:42:00 UTC +00:00]]
+  [1m[35m (138.6ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/alunos/1
+Completed 302 Found in 222ms (ActiveRecord: 212.2ms)
+
+
+Started GET "/alunos/1" for 127.0.0.1 at 2013-04-27 12:42:00 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.6ms)[0m  [1mSELECT "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered alunos/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 51ms (Views: 44.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/alunos" for 127.0.0.1 at 2013-04-27 12:42:06 -0300
+Processing by AlunosController#index as HTML
+  [1m[35mAluno Load (0.5ms)[0m  SELECT "alunos".* FROM "alunos" 
+  Rendered alunos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (99.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (87.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateAlunos (20130427153724)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "matricula" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130427153724')[0m
+  [1m[35m (100.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-27 13:08:11 -0300
+Served asset /rails.png - 304 Not Modified (5ms)
+
+
+Started GET "/alunos" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Processing by AlunosController#index as HTML
+  [1m[36mAluno Load (0.2ms)[0m  [1mSELECT "alunos".* FROM "alunos" [0m
+  Rendered alunos/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 259ms (Views: 139.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /alunos.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /alunos.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:16 -0300
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/alunos/new" for 127.0.0.1 at 2013-04-27 13:08:18 -0300
+Processing by AlunosController#new as HTML
+  Rendered alunos/_form.html.erb (47.1ms)
+  Rendered alunos/new.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 114ms (Views: 98.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:18 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:18 -0300
+Served asset /alunos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:19 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:19 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:19 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:19 -0300
+Served asset /alunos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:19 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/alunos" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Processing by AlunosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d6e/WlffICdNKyi0i1cA0mnr5asrsJmD/LAKtZ4Wh6o=", "aluno"=>{"nome"=>"daniell", "matricula"=>"892832"}, "commit"=>"Create Aluno"}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (88.8ms)[0m  [1mINSERT INTO "alunos" ("created_at", "matricula", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 27 Apr 2013 16:08:33 UTC +00:00], ["matricula", 892832], ["nome", "daniell"], ["updated_at", Sat, 27 Apr 2013 16:08:33 UTC +00:00]]
+  [1m[35m (133.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/alunos/1
+Completed 302 Found in 233ms (ActiveRecord: 223.1ms)
+
+
+Started GET "/alunos/1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.4ms)[0m  [1mSELECT "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered alunos/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 58ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /alunos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /alunos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:33 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/alunos" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Processing by AlunosController#index as HTML
+  [1m[35mAluno Load (0.4ms)[0m  SELECT "alunos".* FROM "alunos" 
+  Rendered alunos/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /alunos.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /alunos.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-27 13:08:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
