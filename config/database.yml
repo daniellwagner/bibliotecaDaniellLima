@@ -21,7 +21,8 @@ test:
 production:
   adapter: postgresql
   host: localhost
-  database: bibliotecaDaniellDB
-  username: daniell
-  password: 7834
+  database: db/bibliotecaDaniellDB
+  pool: 5
+  timeout: 5000
+
 
